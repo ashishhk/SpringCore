@@ -11,10 +11,10 @@
     <name>Multi Module Parent Application</name>
 
     <modules>
-        <module>GenApplication</module>
-        <module>SpringApplication</module>
-        <module>SpringAppScopeNdInnerClass</module>
-        <module>SpringAppInitializeAndDestroy</module>
+        <module>1_GenApplication</module>
+        <module>2_SpringApplication</module>
+        <module>3_SpringAppScopeAndInnerClass</module>
+        <module>4_SpringAppInitializeAndDestroy</module>
         
     </modules>
 
