@@ -13,6 +13,8 @@
     <modules>
         <module>GenApplication</module>
         <module>SpringApplication</module>
+        <module>SpringAppScopeNdInnerClass</module>
+        
     </modules>
 
     <build>
