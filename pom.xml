@@ -14,6 +14,7 @@
         <module>GenApplication</module>
         <module>SpringApplication</module>
         <module>SpringAppScopeNdInnerClass</module>
+        <module>SpringAppInitializeAndDestroy</module>
         
     </modules>
 
