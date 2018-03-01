@@ -16,6 +16,7 @@
         <module>3_SpringAppScopeAndInnerClass</module>
         <module>4_SpringAppInitializeAndDestroy</module>
 		<module>5_SpringAppContextFeature</module>
+		<module>6_SpringAppPropertyInjection</module>
     </modules>
 
     <build>

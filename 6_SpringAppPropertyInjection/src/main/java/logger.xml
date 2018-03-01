@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+						http://www.springframework.org/schema/util
+						http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+	
+	<bean id="consoleEventLogger" class="com.epam.spring.ConsoleEventLogger">
+		<constructor-arg value="SpringCore.log"/>
+	</bean>
+	
+	<bean id="fileEventLogger" class="com.epam.spring.FileEventLogger" init-method="init" parent="consoleEventLogger">
+	</bean>
+	
+	<bean id="cacheEventLogger" class="com.epam.spring.CacheFileEventLogger" destroy-method="destroy" parent="fileEventLogger">
+		<constructor-arg type="int" value="5"/>
+		<constructor-arg>
+			<bean class="java.util.ArrayList"/>
+		</constructor-arg> 
+	</bean>	
+	
+	<bean id="combinedEventLogger" class="com.epam.spring.CombinedEventLogger">
+		<property name="logger">
+			<bean class="java.util.ArrayList">
+				<list>
+					<ref bean="consoleEventLogger"/>
+				</list>
+			</bean>
+		</property> 
+	</bean>
+</beans>
