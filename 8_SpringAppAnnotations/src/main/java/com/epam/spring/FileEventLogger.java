@@ -15,6 +15,7 @@ public class FileEventLogger implements EventLogger {
 		this.fileName = fileName;
 	}
 
+	@PostConstruct
 	public void init() throws IOException {
 		this.file = new File(fileName);
 	}

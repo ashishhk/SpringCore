@@ -1,29 +1,29 @@
 #README 3
-#Scope And Inner Class
-by default all beans are singleton and returning new object each time requires scope to set as prototype
+##Scope And Inner Class
+	by default all beans are singleton and returning new object each time requires scope to set as prototype
+	
+	scope for web applications
+	Request
+	Session
+	Global-sessions
 
-scope for web applications
-Request
-Session
-Global-sessions
+##Inner Bean
+	defination of bean inside the constructor-arg tag
+	name of bean is not required
+	can be created but not be addressed
+	visibility is only where it is defined
+	cannot be reused
+	
+	Why required?- 
+	
 
-#Inner Bean
-defination of bean inside the constructor-arg tag
-name of bean is not required
-can be created but not be addressed
-visibility is only where it is defined
-cannot be reused
+##Factory Method
+	bean tag has a argument as factory-method for static calls such as for DateFormat method 	getDateTimeInstance
 
-Why required?- 
-
-
-#Factory Method
-bean tag has a argument as factory-method for static calls such as for DateFormat method getDateTimeInstance
-
-#README 4 
-#Initialize and Destroy
-
-#init-method
+#README 4
+##Initialize and Destroy
+	
+##init-method
 	an argument in bean arg
 	no arguments
 	any accesss modifier
@@ -38,26 +38,26 @@ bean tag has a argument as factory-method for static calls such as for DateForma
 	not hardcode the filename in code and instead on spring.xml
 	
 	
-#Cache FileEvent Logger
+##Cache FileEvent Logger
 	create new layer of cache to write in to file and keep cache size configurable 
 	use
 	
-#issue 
+	#issue 
 	when program terminates before reaching to full cache size
-#Solution
+##Solution
 	1) Spring maintains objects in container and manages lifecycle 
 	2) Destroy method in Spring configuration file
 
 #README 5
-#Context Feature
-#bean Definition Inheritance
+##Context Feature
+##bean Definition Inheritance
 	its about inheriting defination but not class
 		<bean..... parent="<anotherbeanId>" parent child relation ship between beans
 		definition could be inheritted even if the class don't have parent-child relationship
 	for abstract, add argument abstract="true"
 		Bean is not instantiated by the container
 		The class attribute can be missing
-#Bean Dependency
+##Bean Dependency
 	bean is initalized after the initialization of anotherBean
 	depends-on="<anotherBeanId>" argument
 	
@@ -121,5 +121,35 @@ bean tag has a argument as factory-method for static calls such as for DateForma
 		<property name="nullPropertyName">
 			<null/>
 		</property>	
+#README 7
+##Properties
+	Externalize the more static data(Properties) using PropertyPlaceholderConfigurer
+##NameSpace and Schema Util
+	To provide tags for defining collections, using constants, loading properties, etc.
+	
+	namespaces and schemas ‘p’ and ‘c’ are used to define constructor and properties values using bean 	attributes
+
+	2) AutoWire(either to use everyewhere or not at all to avoid mess)
+		<bean name="" autowire=""/>
+		btName
+		byType
+		Constructor
 		
+		Limits
+		*cannot use primitive due to ambiguties
+		direct reference has higher priority over autowiring
 		
+		Aware Interfaces
+		ApplicationContextAware
+		ApplicationEventPublisherAware
+		
+##Container Events
+	interface ApplicationListner
+	Object ApplicationEvent is passed
+	ContextStartedEvent
+	ContextStoppedEvent
+	ContextRefreshedEvent
+	ContextClosedEvent
+#README 8
+##Annotations
+	

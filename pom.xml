@@ -17,6 +17,8 @@
         <module>4_SpringAppInitializeAndDestroy</module>
 		<module>5_SpringAppContextFeature</module>
 		<module>6_SpringAppPropertyInjection</module>
+		<module>7_SpringAppAdditionalContextFeature</module>
+		<module>8_SpringAppAnnotations</module>
     </modules>
 
     <build>

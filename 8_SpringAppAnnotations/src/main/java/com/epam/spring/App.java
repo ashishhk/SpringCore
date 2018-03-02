@@ -2,19 +2,22 @@ package com.epam.spring;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
+    @Autowired
     private Client client;
     
+    @Autowired
     private Map<EventType,EventLogger> eventLoggers;
     
+    @Autowired
+    @Qualifier("fileEventLogger")
     private EventLogger defaultLogger;
     
     public void logEvent(Event event) {
@@ -49,9 +52,4 @@ public class App
     	ctx.close();
     }
 
-	public App(Client client, Map<EventType, EventLogger> eventLogger, EventLogger defaultLogger) {
-		this.client = client;
-		this.eventLoggers = eventLogger;
-		this.defaultLogger=defaultLogger;
-	}
 }
