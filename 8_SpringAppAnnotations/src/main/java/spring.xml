@@ -18,10 +18,6 @@
 				<entry key="ERROR" value-ref="combinedEventLogger"/>
 	</util:map>
 	
-	<bean id="client" class="com.epam.spring.Client">
-		<constructor-arg index="0" value="${id}"/>
-		<constructor-arg index="1" value="${name}"/>
-	</bean>
 	
 	<!-- by default all beans are singleton and returning new object each time requires scope to set as prototype -->
 	<bean id="event" class="com.epam.spring.Event" scope="prototype">
